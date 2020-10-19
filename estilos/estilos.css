@@ -25,7 +25,7 @@
   margin-top: 10px;
 }
 
-h3 {
+.h3 {
   display: grid;
   margin-left: auto;
   border-top-left-radius: 100px;
@@ -43,20 +43,30 @@ h3 {
   letter-spacing: 5px;
 }
 
+.h4 {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #5c8601;
+  text-shadow: 0px 1px 2px gray;
+}
+
 /*BODY*/
 
 body {
+  background-color: rgb(255, 255, 255);
 }
 
 p {
-  font-size: 19px;
   font-family: "Noto Serif JP", serif;
   font-size: 18px;
   color: black;
   margin-left: 25px;
   margin-right: 25px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 35px;
+  margin-bottom: 35px;
   letter-spacing: 1px;
   word-spacing: 4px;
 }
@@ -92,12 +102,13 @@ footer p {
 }
 
 .ulbase {
-  background-color: #f48020;
+  background-color: #9dbd59;
   text-align: center;
   width: auto;
   height: auto;
   padding: 35px;
   border-radius: 50px;
+  margin-bottom: 40px;
 }
 
 .libase {
@@ -114,6 +125,8 @@ footer p {
   text-decoration: none;
   margin: 25px;
   transition: ease-in-out 0.1s;
+  color: white;
+  text-shadow: 2px 2px 1px black;
 }
 
 .libase a:hover {
@@ -276,6 +289,18 @@ legend {
   margin: 20px;
   border-radius: 20px;
 }
+
+.datospersonales {
+  color: #61a323;
+  padding: 20px;
+  background-color: #dad754;
+  width: auto;
+  margin-top: 40px;
+  font-size: 17px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 8px;
+}
+
 .cinema {
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
@@ -340,7 +365,7 @@ legend {
   min-height: 100vh;
   border-radius: 20px;
   width: auto;
-  margin-bottom: 5px;
+  margin-bottom: 35px;
 }
 .pruebafondo p {
   font-size: 37px;
@@ -354,9 +379,88 @@ legend {
   padding-top: 150px;
 }
 
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+}
+
+.item {
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.095);
+  transition: all 300ms;
+  position: relative;
+}
+
+.item::after {
+  content: "";
+  background-color: rgba(179, 229, 252, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 300ms;
+  opacity: 0;
+}
+
+.item:hover:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item-text {
+  padding: 1em;
+}
+
+.item-img {
+  max-width: 100%;
+  display: block;
+}
+
 /*MEDIA*/
 
+@media screen and (min-width: 590px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  
+  .navegadorbase .ulbase {
+    display: grid;
+    grid-auto-columns: auto;
+    letter-spacing: 5px;
+    padding: 18px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+
+  .libase {
+    margin: -5px;
+  }
+
+  .libase a {
+    font-size: 17px;
+    text-shadow: 1px 1px 1px green;
+    margin: 10px;
   }
 }
